@@ -1,0 +1,19 @@
+php-sonic:
+  image: php:7.4-apache
+  container_name: cont-php
+  ports:
+    - "8081:80"
+    - "443:443"
+  volumes:
+    - /home/ereck/Documentos/sonic-js:/var/www/html
+  links: 
+    - db-sonic
+db-sonic:
+  image: mysql:latest
+  container_name: cont-mysql-php
+  ports: 
+    - "33069:3306"
+  volumes: 
+    - /var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
