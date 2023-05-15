@@ -8,12 +8,4 @@ php-sonic:
     - /home/ereck/Documentos/sonic-js:/var/www/html
   links: 
     - db-sonic
-db-sonic:
-  image: mysql:latest
-  container_name: cont-mysql-php
-  ports: 
-    - "33069:3306"
-  volumes: 
-    - /var/lib/mysql
-  environment:
-    - MYSQL_ROOT_PASSWORD=root
+
